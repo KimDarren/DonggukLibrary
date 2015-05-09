@@ -10,6 +10,7 @@
 
 @interface DRNRoomListViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 
+@property (strong, nonatomic) NSArray *rooms;
 @property (strong, nonatomic) UITableView *tableView;
 
 - (instancetype)init;
