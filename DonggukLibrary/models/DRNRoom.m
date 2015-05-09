@@ -27,7 +27,7 @@
 {
     NSMutableArray *rooms = [NSMutableArray new];
     
-    for (NSDictionary *dictionary in rooms) {
+    for (NSDictionary *dictionary in responseObject) {
         DRNRoom *room = [[DRNRoom alloc] initWithDictionary:dictionary];
         [rooms addObject:room];
     }
