@@ -8,15 +8,23 @@
 
 #import "AppDelegate.h"
 
+// Library
+#import "DRNRoomListNavigationController.h"
+#import "DRNRoomListViewController.h"
+
 @interface AppDelegate ()
 
 @end
 
 @implementation AppDelegate
 
-
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+{
+    DRNRoomListViewController *roomList = [[DRNRoomListViewController alloc] init];
+    DRNRoomListNavigationController *root = [[DRNRoomListNavigationController alloc] initWithRootViewController:roomList];
+    _window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    _window.rootViewController = root;
+    [_window makeKeyAndVisible];
     return YES;
 }
 
