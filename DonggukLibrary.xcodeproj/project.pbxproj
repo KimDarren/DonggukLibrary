@@ -17,6 +17,7 @@
 		862DC2461AFE438F004CCBC8 /* DRNRoomListNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 862DC2451AFE438F004CCBC8 /* DRNRoomListNavigationController.m */; };
 		862DC24B1AFE445E004CCBC8 /* DRNNetwork.m in Sources */ = {isa = PBXBuildFile; fileRef = 862DC24A1AFE445E004CCBC8 /* DRNNetwork.m */; };
 		862DC24F1AFE4704004CCBC8 /* DRNRoom.m in Sources */ = {isa = PBXBuildFile; fileRef = 862DC24E1AFE4704004CCBC8 /* DRNRoom.m */; };
+		862DC2531AFE4A76004CCBC8 /* DRNRoomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 862DC2521AFE4A76004CCBC8 /* DRNRoomCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,8 @@
 		862DC24A1AFE445E004CCBC8 /* DRNNetwork.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DRNNetwork.m; sourceTree = "<group>"; };
 		862DC24D1AFE4704004CCBC8 /* DRNRoom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DRNRoom.h; sourceTree = "<group>"; };
 		862DC24E1AFE4704004CCBC8 /* DRNRoom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DRNRoom.m; sourceTree = "<group>"; };
+		862DC2511AFE4A76004CCBC8 /* DRNRoomCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DRNRoomCell.h; sourceTree = "<group>"; };
+		862DC2521AFE4A76004CCBC8 /* DRNRoomCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DRNRoomCell.m; sourceTree = "<group>"; };
 		86F1038A1AFA9BA0001CFA7F /* DonggukLibrary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DonggukLibrary.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6005EBFAFF948711560DAE8 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -107,6 +110,7 @@
 			isa = PBXGroup;
 			children = (
 				862DC2431AFE437E004CCBC8 /* navigation */,
+				862DC2501AFE4A69004CCBC8 /* cell */,
 				862DC2401AFE4274004CCBC8 /* DRNRoomListViewController.h */,
 				862DC2411AFE4274004CCBC8 /* DRNRoomListViewController.m */,
 			);
@@ -138,6 +142,15 @@
 				862DC24E1AFE4704004CCBC8 /* DRNRoom.m */,
 			);
 			path = models;
+			sourceTree = "<group>";
+		};
+		862DC2501AFE4A69004CCBC8 /* cell */ = {
+			isa = PBXGroup;
+			children = (
+				862DC2511AFE4A76004CCBC8 /* DRNRoomCell.h */,
+				862DC2521AFE4A76004CCBC8 /* DRNRoomCell.m */,
+			);
+			path = cell;
 			sourceTree = "<group>";
 		};
 		86F103811AFA9B9F001CFA7F = {
@@ -277,6 +290,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				862DC2531AFE4A76004CCBC8 /* DRNRoomCell.m in Sources */,
 				862DC2321AFA9CFB004CCBC8 /* main.m in Sources */,
 				862DC2421AFE4274004CCBC8 /* DRNRoomListViewController.m in Sources */,
 				862DC24B1AFE445E004CCBC8 /* DRNNetwork.m in Sources */,
