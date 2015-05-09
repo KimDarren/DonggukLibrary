@@ -8,6 +8,9 @@
 
 #import "DRNNetwork.h"
 
+// Models
+#import "DRNRoom.h"
+
 // Library
 #import <AFNetworking/AFNetworking.h>
 
@@ -26,7 +29,8 @@
     AFHTTPRequestOperationManager *manager = [self requestManager];
     [manager GET:URL_ROOM_LIST parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
         if (success) {
-            success(responseObject);
+            NSArray *rooms = [DRNRoom roomsWithResponseObject:responseObject];
+            success(rooms);
         }
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         if (failure) {
