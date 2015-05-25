@@ -14,6 +14,9 @@
 // View
 #import "DRNRoomCell.h"
 
+// Controller
+#import "DRNRoomStatusViewController.h"
+
 // Utility
 #import "DRNNetwork.h"
 
@@ -80,6 +83,13 @@ static NSString * const DRNRoomCellIdentifier = @"DRNRoomCell";
     cell.room = room;
     
     return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    DRNRoom *room = [_rooms objectAtIndex:indexPath.row];
+    DRNRoomStatusViewController *statusView = [[DRNRoomStatusViewController alloc] initWithRoom:room];
+    [self.navigationController pushViewController:statusView animated:YES];
 }
 
 @end
