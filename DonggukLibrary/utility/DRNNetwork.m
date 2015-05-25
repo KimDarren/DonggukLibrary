@@ -39,4 +39,21 @@
     }];
 }
 
++ (void)getRoomStatusWithRoom:(DRNRoom *)room
+                      success:(DRNNetworkSuccessDictionaryHandler)success
+                      failure:(DRNNetworkFailureHandler)failure
+{
+    NSLog(@"url = %@", URL_ROOM_STATUS(room.number));
+    AFHTTPRequestOperationManager *manager = [self requestManager];
+    [manager GET:URL_ROOM_STATUS(room.number) parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        if (success) {
+            success(responseObject);
+        }
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        if (failure) {
+            failure(error);
+        }
+    }];
+}
+
 @end

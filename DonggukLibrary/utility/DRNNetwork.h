@@ -10,7 +10,7 @@
 
 #define URL     @"http://api.darrenline.tk/dongguk_library"
 #define URL_ROOM_LIST           URL "/room_list.php"
-#define URL_ROOM_STATUS(val)    URL "/menu_section_list.php?number=val"
+#define URL_ROOM_STATUS(val)    [NSString stringWithFormat:@"%@%@%@", URL, @"/room_status.php?number=", val]
 
 typedef void (^DRNNetworkSuccessHandler) (id responseObject);
 typedef void (^DRNNetworkSuccessArrayHandler) (NSArray *responseObject);
@@ -18,10 +18,15 @@ typedef void (^DRNNetworkSuccessDictionaryHandler) (NSDictionary *responseObject
 typedef void (^DRNNetworkFailureHandler) (NSError *error);
 
 @class AFHTTPRequestOperationManager;
+@class DRNRoom;
 
 @interface DRNNetwork : NSObject
 
 + (AFHTTPRequestOperationManager *)requestManager;
 + (void)getRoomListWithSuccess:(DRNNetworkSuccessArrayHandler)success failure:(DRNNetworkFailureHandler)failure;
+
++ (void)getRoomStatusWithRoom:(DRNRoom *)room
+                      success:(DRNNetworkSuccessDictionaryHandler)success
+                      failure:(DRNNetworkFailureHandler)failure;
 
 @end
