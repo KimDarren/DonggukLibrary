@@ -18,6 +18,9 @@
 		862DC24B1AFE445E004CCBC8 /* DRNNetwork.m in Sources */ = {isa = PBXBuildFile; fileRef = 862DC24A1AFE445E004CCBC8 /* DRNNetwork.m */; };
 		862DC24F1AFE4704004CCBC8 /* DRNRoom.m in Sources */ = {isa = PBXBuildFile; fileRef = 862DC24E1AFE4704004CCBC8 /* DRNRoom.m */; };
 		862DC2531AFE4A76004CCBC8 /* DRNRoomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 862DC2521AFE4A76004CCBC8 /* DRNRoomCell.m */; };
+		862DC2571AFE80BD004CCBC8 /* DRNRoomStatusViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 862DC2561AFE80BD004CCBC8 /* DRNRoomStatusViewController.m */; };
+		8699D5F31B132E0C00AABEB9 /* DRNSeat.m in Sources */ = {isa = PBXBuildFile; fileRef = 8699D5F21B132E0C00AABEB9 /* DRNSeat.m */; };
+		86DB040A1B08F65C00C776A4 /* map.json in Resources */ = {isa = PBXBuildFile; fileRef = 86DB04091B08F65C00C776A4 /* map.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +42,11 @@
 		862DC24E1AFE4704004CCBC8 /* DRNRoom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DRNRoom.m; sourceTree = "<group>"; };
 		862DC2511AFE4A76004CCBC8 /* DRNRoomCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DRNRoomCell.h; sourceTree = "<group>"; };
 		862DC2521AFE4A76004CCBC8 /* DRNRoomCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DRNRoomCell.m; sourceTree = "<group>"; };
+		862DC2551AFE80BD004CCBC8 /* DRNRoomStatusViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DRNRoomStatusViewController.h; sourceTree = "<group>"; };
+		862DC2561AFE80BD004CCBC8 /* DRNRoomStatusViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DRNRoomStatusViewController.m; sourceTree = "<group>"; };
+		8699D5F11B132E0C00AABEB9 /* DRNSeat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DRNSeat.h; sourceTree = "<group>"; };
+		8699D5F21B132E0C00AABEB9 /* DRNSeat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DRNSeat.m; sourceTree = "<group>"; };
+		86DB04091B08F65C00C776A4 /* map.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = map.json; sourceTree = "<group>"; };
 		86F1038A1AFA9BA0001CFA7F /* DonggukLibrary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DonggukLibrary.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6005EBFAFF948711560DAE8 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -100,6 +108,7 @@
 		862DC22B1AFA9CFB004CCBC8 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				86DB04091B08F65C00C776A4 /* map.json */,
 				862DC22C1AFA9CFB004CCBC8 /* Info.plist */,
 				862DC22D1AFA9CFB004CCBC8 /* main.m */,
 			);
@@ -140,6 +149,8 @@
 			children = (
 				862DC24D1AFE4704004CCBC8 /* DRNRoom.h */,
 				862DC24E1AFE4704004CCBC8 /* DRNRoom.m */,
+				8699D5F11B132E0C00AABEB9 /* DRNSeat.h */,
+				8699D5F21B132E0C00AABEB9 /* DRNSeat.m */,
 			);
 			path = models;
 			sourceTree = "<group>";
@@ -151,6 +162,15 @@
 				862DC2521AFE4A76004CCBC8 /* DRNRoomCell.m */,
 			);
 			path = cell;
+			sourceTree = "<group>";
+		};
+		862DC2541AFE80B1004CCBC8 /* room_status */ = {
+			isa = PBXGroup;
+			children = (
+				862DC2551AFE80BD004CCBC8 /* DRNRoomStatusViewController.h */,
+				862DC2561AFE80BD004CCBC8 /* DRNRoomStatusViewController.m */,
+			);
+			path = room_status;
 			sourceTree = "<group>";
 		};
 		86F103811AFA9B9F001CFA7F = {
@@ -180,6 +200,7 @@
 				862DC2481AFE4457004CCBC8 /* utility */,
 				862DC24C1AFE46FA004CCBC8 /* models */,
 				862DC23F1AFE424F004CCBC8 /* room_list */,
+				862DC2541AFE80B1004CCBC8 /* room_status */,
 				862DC22B1AFA9CFB004CCBC8 /* Supporting Files */,
 			);
 			path = DonggukLibrary;
@@ -246,6 +267,7 @@
 			files = (
 				862DC2301AFA9CFB004CCBC8 /* LaunchScreen.xib in Resources */,
 				862DC22F1AFA9CFB004CCBC8 /* Images.xcassets in Resources */,
+				86DB040A1B08F65C00C776A4 /* map.json in Resources */,
 				862DC2311AFA9CFB004CCBC8 /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -293,7 +315,9 @@
 				862DC2531AFE4A76004CCBC8 /* DRNRoomCell.m in Sources */,
 				862DC2321AFA9CFB004CCBC8 /* main.m in Sources */,
 				862DC2421AFE4274004CCBC8 /* DRNRoomListViewController.m in Sources */,
+				8699D5F31B132E0C00AABEB9 /* DRNSeat.m in Sources */,
 				862DC24B1AFE445E004CCBC8 /* DRNNetwork.m in Sources */,
+				862DC2571AFE80BD004CCBC8 /* DRNRoomStatusViewController.m in Sources */,
 				862DC24F1AFE4704004CCBC8 /* DRNRoom.m in Sources */,
 				862DC22E1AFA9CFB004CCBC8 /* AppDelegate.m in Sources */,
 				862DC2461AFE438F004CCBC8 /* DRNRoomListNavigationController.m in Sources */,
