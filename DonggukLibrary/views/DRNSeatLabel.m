@@ -11,6 +11,9 @@
 // Model
 #import "DRNSeat.h"
 
+// Utility
+#import "UIColor+DRNExtension.h"
+
 @implementation DRNSeatLabel
 
 - (instancetype)initWithSeat:(DRNSeat *)seat
@@ -31,21 +34,23 @@
     return self;
 }
 
-// Setter
+#pragma mark - Setter
+
 - (void)setType:(DRNSeatLabelType)type
 {
     _type = type;
     
     if (_type == DRNSeatLabelTypeEnable) {
-        self.backgroundColor = [UIColor orangeColor];
+        self.backgroundColor = [UIColor drn_darkGrayColor];
     } else if (_type == DRNSeatLabelTypeDisbale) {
-        self.backgroundColor = [UIColor redColor];
+        self.backgroundColor = [UIColor drn_darkOrangeColor];
     } else {
-        self.backgroundColor = [UIColor lightGrayColor];
+        self.backgroundColor = [UIColor drn_orangeColor];
     }
 }
 
-// Getter
+#pragma mark - Getter
+
 - (CGFloat)bottom
 {
     return _seat.positionYInteger * (DRNSeatLabelDefaultHeight + DRNSeatLabelDefaultGap) + DRNSeatLabelDefaultHeight;
