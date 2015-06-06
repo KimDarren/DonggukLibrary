@@ -12,6 +12,9 @@
 #import "DRNRoom.h"
 #import "DRNSeat.h"
 
+// View
+#import "DRNSeatLabel.h"
+
 // Utility
 #import "DRNNetwork.h"
 
@@ -36,6 +39,7 @@
         _room = room;
         
         _scrollView = [[UIScrollView alloc] init];
+        _scrollView.contentInset = UIEdgeInsetsMake(50, 50, 50, 50);
         [self.view addSubview:_scrollView];
         
         [self makeAutoLayoutConstraints];
@@ -93,23 +97,19 @@
         NSArray *mapArray = [[array objectAtIndex:_room.numberInteger-1] objectForKey:@"map"];
         mapArray = [DRNSeat seatsWithMapArray:mapArray];
         
-        CGFloat maxWidth = 0;
-        CGFloat maxHeight = 0;
+        CGFloat maxWidth = 0, maxHeight = 0;
         for (DRNSeat *seat in mapArray) {
-            UILabel *label = [[UILabel alloc] init];
-            label.text = @([seat.number integerValue]).stringValue;
-            label.textColor = [UIColor blackColor];
-            label.backgroundColor = [UIColor grayColor];
-            label.textAlignment = NSTextAlignmentCenter;
-            label.frame = CGRectMake(seat.positionXInteger * 43.0f,
-                                     seat.positionYInteger * 30.0f,
-                                     40.0f,
-                                     27.0f);
+            DRNSeatLabel *label = [[DRNSeatLabel alloc] initWithSeat:seat];
+            maxWidth    = MAX(maxWidth, label.right);
+            maxHeight   = MAX(maxHeight, label.bottom);
+            
             if ([_enable containsObject:seat.number]) {
-                label.backgroundColor = [UIColor orangeColor];
+                label.type = DRNSeatLabelTypeEnable;
+            } else if ([_disable containsObject:seat.number]) {
+                label.type = DRNSeatLabelTypeDisbale;
+            } else if ([_using containsObject:seat.number]) {
+                label.type = DRNSeatLabelTypeUsing;
             }
-            maxWidth = MAX(maxWidth, seat.positionXInteger * 43.0f + 40.0f);
-            maxHeight = MAX(maxHeight, seat.positionYInteger * 30.0f + 27.0f);
             
             [_scrollView addSubview:label];
         }
