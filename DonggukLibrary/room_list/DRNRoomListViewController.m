@@ -36,6 +36,8 @@ static NSString * const DRNRoomCellIdentifier = @"DRNRoomCell";
     self = [super init];
     if (self) {
         self.view.backgroundColor = [UIColor redColor];
+        self.title = @"열람실 목록";
+        
         _tableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStylePlain];
         _tableView.dataSource = self;
         _tableView.delegate = self;
