@@ -14,6 +14,7 @@
 
 // View
 #import "DRNSeatLabel.h"
+#import "DRNTooltipView.h"
 
 // Utility
 #import "DRNNetwork.h"
@@ -40,19 +41,33 @@
         
         _scrollView = [[UIScrollView alloc] init];
         _scrollView.contentInset = UIEdgeInsetsMake(50, 50, 50, 50);
+        _scrollView.delegate = self;
+        
+        _tooltipView = [[DRNTooltipView alloc] init];
+        
         [self.view addSubview:_scrollView];
+        [self.view addSubview:_tooltipView];
         
         [self makeAutoLayoutConstraints];
     }
     return self;
 }
 
+#pragma mark - Layout
+
 - (void)makeAutoLayoutConstraints
 {
     [_scrollView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.equalTo(self.view);
     }];
+    
+    [_tooltipView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.right.and.bottom.equalTo(@.0f);
+        make.height.equalTo(@44.0f);
+    }];
 }
+
+#pragma mark - Lifecycle
 
 - (void)viewDidLayoutSubviews
 {
@@ -80,6 +95,8 @@
         NSLog(@"%@", error);
     }];
 }
+
+#pragma mark - Data
 
 - (void)parse
 {
@@ -115,6 +132,25 @@
         }
         _scrollView.contentSize = CGSizeMake(maxWidth, maxHeight);
     }
+}
+
+#pragma mark - Scroll view delegate
+
+- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate
+{
+    if (!decelerate) {
+        [_tooltipView hideWithAnimate:YES];
+    }
+}
+
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
+{
+    [_tooltipView hideWithAnimate:YES];
+}
+
+- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView
+{
+    [_tooltipView showWithAnimate:YES];
 }
 
 @end
