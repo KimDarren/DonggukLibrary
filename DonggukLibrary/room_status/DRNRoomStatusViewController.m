@@ -27,6 +27,7 @@
 @property (strong, nonatomic) NSArray *enable;
 @property (strong, nonatomic) NSArray *disable;
 @property (strong, nonatomic) NSArray *using;
+@property (strong, nonatomic) UIView *containerView;
 
 @end
 
@@ -36,12 +37,23 @@
 {
     self = [super init];
     if (self) {
-        self.view.backgroundColor = [UIColor whiteColor];
+        self.view.backgroundColor = [UIColor colorWithWhite:0.97f alpha:1.0f];
+        self.title = room.title;
+        
         _room = room;
         
         _scrollView = [[UIScrollView alloc] init];
         _scrollView.contentInset = UIEdgeInsetsMake(50, 50, 50, 50);
+        _scrollView.showsHorizontalScrollIndicator = NO;
+        _scrollView.showsVerticalScrollIndicator = NO;
         _scrollView.delegate = self;
+        _scrollView.minimumZoomScale = .5f;
+        _scrollView.maximumZoomScale = 1.0f;
+        
+        UITapGestureRecognizer *tapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(doubleTapped:)];
+        tapRecognizer.numberOfTapsRequired = 2;
+        tapRecognizer.numberOfTouchesRequired = 1;
+        [_scrollView addGestureRecognizer:tapRecognizer];
         
         _tooltipView = [[DRNTooltipView alloc] init];
         
@@ -68,16 +80,6 @@
 }
 
 #pragma mark - Lifecycle
-
-- (void)viewDidLayoutSubviews
-{
-    [super viewDidLayoutSubviews];
-}
-
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-}
 
 - (void)viewDidAppear:(BOOL)animated
 {
@@ -115,6 +117,7 @@
         mapArray = [DRNSeat seatsWithMapArray:mapArray];
         
         CGFloat maxWidth = 0, maxHeight = 0;
+        _containerView = [[UIView alloc] init];
         for (DRNSeat *seat in mapArray) {
             DRNSeatLabel *label = [[DRNSeatLabel alloc] initWithSeat:seat];
             maxWidth    = MAX(maxWidth, label.right);
@@ -128,9 +131,23 @@
                 label.type = DRNSeatLabelTypeUsing;
             }
             
-            [_scrollView addSubview:label];
+            [_containerView addSubview:label];
         }
+        [_scrollView addSubview:_containerView];
+        _containerView.frame = CGRectMake(0, 0, maxWidth, maxHeight);
         _scrollView.contentSize = CGSizeMake(maxWidth, maxHeight);
+    }
+    [_tooltipView hideWithAnimate:YES];
+}
+
+#pragma mark - Actions
+
+- (void)doubleTapped:(UITapGestureRecognizer *)recognizer
+{
+    if (_scrollView.zoomScale != 1.0f) {
+        [_scrollView setZoomScale:1.f animated:YES];
+    } else {
+        [_scrollView setZoomScale:.5f animated:YES];
     }
 }
 
@@ -151,6 +168,16 @@
 - (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView
 {
     [_tooltipView showWithAnimate:YES];
+}
+
+- (void)scrollViewDidZoom:(UIScrollView *)scrollView
+{
+    _containerView.transform = CGAffineTransformMakeScale(scrollView.zoomScale, scrollView.zoomScale);
+}
+
+- (UIView *)viewForZoomingInScrollView:(UIScrollView *)scrollView
+{
+    return _containerView;
 }
 
 @end
