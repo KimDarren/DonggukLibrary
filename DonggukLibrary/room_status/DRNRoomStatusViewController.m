@@ -24,7 +24,7 @@
 // Library
 #import <Masonry/Masonry.h>
 
-@interface DRNRoomStatusViewController ()
+@interface DRNRoomStatusViewController () <DRNRoomStatusTitleViewDelegate>
 
 @property (strong, nonatomic) NSArray *enable;
 @property (strong, nonatomic) NSArray *disable;
@@ -46,6 +46,7 @@
         _room = room;
         
         _titleView = [[DRNRoomStatusTitleView alloc] initWithTitle:_room.title];
+        _titleView.delegate = self;
         
         _scrollView = [[UIScrollView alloc] init];
         _scrollView.contentInset = UIEdgeInsetsMake(50, 50, 50, 50);
@@ -188,6 +189,13 @@
 - (UIView *)viewForZoomingInScrollView:(UIScrollView *)scrollView
 {
     return _containerView;
+}
+
+#pragma mark - Room status title view delegate
+
+- (void)roomStatusTitleViewDidSelectCloseButton:(DRNRoomStatusTitleView *)titleView
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 @end

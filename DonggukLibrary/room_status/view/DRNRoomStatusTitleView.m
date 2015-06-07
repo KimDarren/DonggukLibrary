@@ -25,6 +25,7 @@
 {
     self = [super init];
     if (self) {
+        self.backgroundColor = [UIColor whiteColor];
         _title = title;
         _containerView = [[UIView alloc] init];
         
@@ -34,7 +35,8 @@
         _titleLabel.textColor = [UIColor drn_darkGrayColor];
         
         _closeButton = [[UIButton alloc] init];
-        [_closeButton setTitle:@"Close" forState:UIControlStateNormal];
+        [_closeButton setImage:[UIImage imageNamed:@"CloseButton"] forState:UIControlStateNormal];
+        [_closeButton addTarget:self action:@selector(close:) forControlEvents:UIControlEventTouchUpInside];
         
         _separator = [[UIView alloc] init];
         _separator.backgroundColor = [UIColor lightGrayColor];
@@ -62,6 +64,11 @@
         make.center.equalTo(_containerView);
     }];
     
+    [_closeButton mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerY.equalTo(@.0f);
+        make.right.equalTo(@(-19.0f));
+    }];
+    
     [_separator mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.right.and.bottom.equalTo(@.0f);
         make.height.equalTo(@.5f);
@@ -74,6 +81,15 @@
 {
     _title = title;
     _titleLabel.text = _title;
+}
+
+#pragma mark - Actions
+
+- (void)close:(UIButton *)closeButton
+{
+    if ([_delegate respondsToSelector:@selector(roomStatusTitleViewDidSelectCloseButton:)]) {
+        [_delegate roomStatusTitleViewDidSelectCloseButton:self];
+    }
 }
 
 @end

@@ -10,7 +10,17 @@
 
 static const CGFloat DRNRoomStatusTitleContainerHeight = 44.0f;
 
+@class DRNRoomStatusTitleView;
+
+@protocol DRNRoomStatusTitleViewDelegate <NSObject>
+
+- (void)roomStatusTitleViewDidSelectCloseButton:(DRNRoomStatusTitleView *)titleView;
+
+@end
+
 @interface DRNRoomStatusTitleView : UIView
+
+@property (weak, nonatomic) id<DRNRoomStatusTitleViewDelegate> delegate;
 
 @property (strong, nonatomic) NSString *title;
 
