@@ -21,6 +21,7 @@
 		862DC2571AFE80BD004CCBC8 /* DRNRoomStatusViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 862DC2561AFE80BD004CCBC8 /* DRNRoomStatusViewController.m */; };
 		86552AE31B23731F009AA33A /* UIColor+DRNExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 86552AE21B23731F009AA33A /* UIColor+DRNExtension.m */; };
 		86552AEA1B237B34009AA33A /* DRNTooltipView.m in Sources */ = {isa = PBXBuildFile; fileRef = 86552AE91B237B34009AA33A /* DRNTooltipView.m */; };
+		86552AEE1B246615009AA33A /* DRNRoomStatusTitleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 86552AED1B246615009AA33A /* DRNRoomStatusTitleView.m */; };
 		8699D5F31B132E0C00AABEB9 /* DRNSeat.m in Sources */ = {isa = PBXBuildFile; fileRef = 8699D5F21B132E0C00AABEB9 /* DRNSeat.m */; };
 		86DB040A1B08F65C00C776A4 /* map.json in Resources */ = {isa = PBXBuildFile; fileRef = 86DB04091B08F65C00C776A4 /* map.json */; };
 		86F4F75A1B13871A00AB9DA0 /* DRNSeatLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 86F4F7591B13871A00AB9DA0 /* DRNSeatLabel.m */; };
@@ -51,6 +52,8 @@
 		86552AE21B23731F009AA33A /* UIColor+DRNExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+DRNExtension.m"; sourceTree = "<group>"; };
 		86552AE81B237B34009AA33A /* DRNTooltipView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DRNTooltipView.h; sourceTree = "<group>"; };
 		86552AE91B237B34009AA33A /* DRNTooltipView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DRNTooltipView.m; sourceTree = "<group>"; };
+		86552AEC1B246615009AA33A /* DRNRoomStatusTitleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DRNRoomStatusTitleView.h; sourceTree = "<group>"; };
+		86552AED1B246615009AA33A /* DRNRoomStatusTitleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DRNRoomStatusTitleView.m; sourceTree = "<group>"; };
 		8699D5F11B132E0C00AABEB9 /* DRNSeat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DRNSeat.h; sourceTree = "<group>"; };
 		8699D5F21B132E0C00AABEB9 /* DRNSeat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DRNSeat.m; sourceTree = "<group>"; };
 		86DB04091B08F65C00C776A4 /* map.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = map.json; sourceTree = "<group>"; };
@@ -178,10 +181,20 @@
 		862DC2541AFE80B1004CCBC8 /* room_status */ = {
 			isa = PBXGroup;
 			children = (
+				86552AEB1B2465F6009AA33A /* view */,
 				862DC2551AFE80BD004CCBC8 /* DRNRoomStatusViewController.h */,
 				862DC2561AFE80BD004CCBC8 /* DRNRoomStatusViewController.m */,
 			);
 			path = room_status;
+			sourceTree = "<group>";
+		};
+		86552AEB1B2465F6009AA33A /* view */ = {
+			isa = PBXGroup;
+			children = (
+				86552AEC1B246615009AA33A /* DRNRoomStatusTitleView.h */,
+				86552AED1B246615009AA33A /* DRNRoomStatusTitleView.m */,
+			);
+			path = view;
 			sourceTree = "<group>";
 		};
 		86F103811AFA9B9F001CFA7F = {
@@ -340,6 +353,7 @@
 				862DC2421AFE4274004CCBC8 /* DRNRoomListViewController.m in Sources */,
 				8699D5F31B132E0C00AABEB9 /* DRNSeat.m in Sources */,
 				862DC24B1AFE445E004CCBC8 /* DRNNetwork.m in Sources */,
+				86552AEE1B246615009AA33A /* DRNRoomStatusTitleView.m in Sources */,
 				86552AEA1B237B34009AA33A /* DRNTooltipView.m in Sources */,
 				862DC2571AFE80BD004CCBC8 /* DRNRoomStatusViewController.m in Sources */,
 				862DC24F1AFE4704004CCBC8 /* DRNRoom.m in Sources */,
