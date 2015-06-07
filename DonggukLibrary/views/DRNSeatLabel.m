@@ -43,9 +43,9 @@
     if (_type == DRNSeatLabelTypeEnable) {
         self.backgroundColor = [UIColor drn_darkGrayColor];
     } else if (_type == DRNSeatLabelTypeDisbale) {
-        self.backgroundColor = [UIColor drn_darkOrangeColor];
+        self.backgroundColor = [UIColor lightGrayColor];
     } else {
-        self.backgroundColor = [UIColor drn_orangeColor];
+        self.backgroundColor = [UIColor drn_darkOrangeColor];
     }
 }
 

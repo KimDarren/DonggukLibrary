@@ -31,14 +31,14 @@
         
         _usingLabel = [[UILabel alloc] init];
         _usingLabel.text = @"사용 중";
-        _usingLabel.backgroundColor = [UIColor drn_orangeColor];
+        _usingLabel.backgroundColor = [UIColor drn_darkOrangeColor];
         _usingLabel.font = [UIFont fontWithName:@"AppleSDGothicNeo-Bold" size:10.0f];
         _usingLabel.textColor = [UIColor whiteColor];
         _usingLabel.textAlignment = NSTextAlignmentCenter;
         
         _disableLabel = [[UILabel alloc] init];
         _disableLabel.text = @"사용 불가";
-        _disableLabel.backgroundColor = [UIColor drn_darkOrangeColor];
+        _disableLabel.backgroundColor = [UIColor lightGrayColor];
         _disableLabel.font = [UIFont fontWithName:@"AppleSDGothicNeo-Bold" size:10.0f];
         _disableLabel.textColor = [UIColor whiteColor];
         _disableLabel.textAlignment = NSTextAlignmentCenter;
