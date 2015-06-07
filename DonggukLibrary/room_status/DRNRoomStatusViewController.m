@@ -15,6 +15,7 @@
 // View
 #import "DRNSeatLabel.h"
 #import "DRNTooltipView.h"
+#import "DRNRoomStatusTitleView.h"
 
 // Utility
 #import "DRNNetwork.h"
@@ -28,6 +29,7 @@
 @property (strong, nonatomic) NSArray *disable;
 @property (strong, nonatomic) NSArray *using;
 @property (strong, nonatomic) UIView *containerView;
+@property (strong, nonatomic) DRNRoomStatusTitleView *titleView;
 
 @end
 
@@ -41,6 +43,8 @@
         self.title = room.title;
         
         _room = room;
+        
+        _titleView = [[DRNRoomStatusTitleView alloc] initWithTitle:_room.title];
         
         _scrollView = [[UIScrollView alloc] init];
         _scrollView.contentInset = UIEdgeInsetsMake(50, 50, 50, 50);
@@ -57,6 +61,7 @@
         
         _tooltipView = [[DRNTooltipView alloc] init];
         
+        [self.view addSubview:_titleView];
         [self.view addSubview:_scrollView];
         [self.view addSubview:_tooltipView];
         
@@ -69,8 +74,14 @@
 
 - (void)makeAutoLayoutConstraints
 {
+    [_titleView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.right.and.top.equalTo(@.0f);
+        make.height.equalTo(@(20.0f + DRNRoomStatusTitleContainerHeight));
+    }];
+    
     [_scrollView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.edges.equalTo(self.view);
+        make.top.equalTo(_titleView.mas_bottom);
+        make.left.right.and.bottom.equalTo(@.0f);
     }];
     
     [_tooltipView mas_makeConstraints:^(MASConstraintMaker *make) {

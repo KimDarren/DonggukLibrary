@@ -97,7 +97,7 @@ static NSString * const DRNRoomCellIdentifier = @"DRNRoomCell";
 {
     DRNRoom *room = [_rooms objectAtIndex:indexPath.row];
     DRNRoomStatusViewController *statusView = [[DRNRoomStatusViewController alloc] initWithRoom:room];
-    [self.navigationController pushViewController:statusView animated:YES];
+    [self presentViewController:statusView animated:YES completion:nil];
 }
 
 @end
