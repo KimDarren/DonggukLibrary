@@ -22,6 +22,7 @@
 		86552AE31B23731F009AA33A /* UIColor+DRNExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 86552AE21B23731F009AA33A /* UIColor+DRNExtension.m */; };
 		86552AEA1B237B34009AA33A /* DRNTooltipView.m in Sources */ = {isa = PBXBuildFile; fileRef = 86552AE91B237B34009AA33A /* DRNTooltipView.m */; };
 		86552AEE1B246615009AA33A /* DRNRoomStatusTitleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 86552AED1B246615009AA33A /* DRNRoomStatusTitleView.m */; };
+		86552AF41B246BFB009AA33A /* DRNUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 86552AF31B246BFB009AA33A /* DRNUtility.m */; };
 		8699D5F31B132E0C00AABEB9 /* DRNSeat.m in Sources */ = {isa = PBXBuildFile; fileRef = 8699D5F21B132E0C00AABEB9 /* DRNSeat.m */; };
 		86DB040A1B08F65C00C776A4 /* map.json in Resources */ = {isa = PBXBuildFile; fileRef = 86DB04091B08F65C00C776A4 /* map.json */; };
 		86F4F75A1B13871A00AB9DA0 /* DRNSeatLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 86F4F7591B13871A00AB9DA0 /* DRNSeatLabel.m */; };
@@ -54,6 +55,8 @@
 		86552AE91B237B34009AA33A /* DRNTooltipView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DRNTooltipView.m; sourceTree = "<group>"; };
 		86552AEC1B246615009AA33A /* DRNRoomStatusTitleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DRNRoomStatusTitleView.h; sourceTree = "<group>"; };
 		86552AED1B246615009AA33A /* DRNRoomStatusTitleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DRNRoomStatusTitleView.m; sourceTree = "<group>"; };
+		86552AF21B246BFB009AA33A /* DRNUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DRNUtility.h; sourceTree = "<group>"; };
+		86552AF31B246BFB009AA33A /* DRNUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DRNUtility.m; sourceTree = "<group>"; };
 		8699D5F11B132E0C00AABEB9 /* DRNSeat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DRNSeat.h; sourceTree = "<group>"; };
 		8699D5F21B132E0C00AABEB9 /* DRNSeat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DRNSeat.m; sourceTree = "<group>"; };
 		86DB04091B08F65C00C776A4 /* map.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = map.json; sourceTree = "<group>"; };
@@ -154,6 +157,8 @@
 				862DC24A1AFE445E004CCBC8 /* DRNNetwork.m */,
 				86552AE11B23731F009AA33A /* UIColor+DRNExtension.h */,
 				86552AE21B23731F009AA33A /* UIColor+DRNExtension.m */,
+				86552AF21B246BFB009AA33A /* DRNUtility.h */,
+				86552AF31B246BFB009AA33A /* DRNUtility.m */,
 			);
 			path = utility;
 			sourceTree = "<group>";
@@ -357,6 +362,7 @@
 				86552AEA1B237B34009AA33A /* DRNTooltipView.m in Sources */,
 				862DC2571AFE80BD004CCBC8 /* DRNRoomStatusViewController.m in Sources */,
 				862DC24F1AFE4704004CCBC8 /* DRNRoom.m in Sources */,
+				86552AF41B246BFB009AA33A /* DRNUtility.m in Sources */,
 				86552AE31B23731F009AA33A /* UIColor+DRNExtension.m in Sources */,
 				862DC22E1AFA9CFB004CCBC8 /* AppDelegate.m in Sources */,
 				86F4F75A1B13871A00AB9DA0 /* DRNSeatLabel.m in Sources */,

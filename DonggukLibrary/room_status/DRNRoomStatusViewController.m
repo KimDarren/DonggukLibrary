@@ -18,6 +18,7 @@
 #import "DRNRoomStatusTitleView.h"
 
 // Utility
+#import "DRNUtility.h"
 #import "DRNNetwork.h"
 
 // Library
@@ -76,7 +77,7 @@
 {
     [_titleView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.right.and.top.equalTo(@.0f);
-        make.height.equalTo(@(20.0f + DRNRoomStatusTitleContainerHeight));
+        make.height.equalTo(@([DRNUtility statusBarHeight] + DRNRoomStatusTitleContainerHeight));
     }];
     
     [_scrollView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -97,13 +98,11 @@
     [super viewDidAppear:animated];
     
     [DRNNetwork getRoomStatusWithRoom:_room success:^(NSDictionary *responseObject) {
-        NSLog(@"%@", responseObject);
-        
         _enable = [responseObject objectForKey:@"enable"];
         _disable = [responseObject objectForKey:@"disable"];
         _using = [responseObject objectForKey:@"using"];
-        [self parse];
         
+        [self parse];
     } failure:^(NSError *error) {
         NSLog(@"%@", error);
     }];
