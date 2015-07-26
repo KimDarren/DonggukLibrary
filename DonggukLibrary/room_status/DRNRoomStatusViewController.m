@@ -85,6 +85,15 @@
     }];
 }
 
+- (void)updateViewConstraints
+{
+    [_titleView mas_updateConstraints:^(MASConstraintMaker *make) {
+        make.height.equalTo(@([DRNUtility statusBarHeight] + DRNRoomStatusTitleContainerHeight));
+    }];
+    
+    [super updateViewConstraints];
+}
+
 #pragma mark - Lifecycle
 
 - (void)viewDidLoad
