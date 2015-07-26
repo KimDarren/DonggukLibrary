@@ -26,7 +26,7 @@
         self.navigationBar.translucent = NO;
         
         NSDictionary *titleTextAttributes = @{NSForegroundColorAttributeName: [UIColor whiteColor],
-                                              NSFontAttributeName: [UIFont fontWithName:@"AppleSDGothicNeo-Bold" size:17.0f]};
+                                              NSFontAttributeName: [UIFont fontWithName:@"AppleSDGothicNeo-SemiBold" size:17.0f]};
         
         self.navigationBar.titleTextAttributes = titleTextAttributes;
     }

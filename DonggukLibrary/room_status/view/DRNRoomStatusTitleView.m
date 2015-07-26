@@ -33,6 +33,7 @@
         _titleLabel.text = _title;
         _titleLabel.textAlignment = NSTextAlignmentCenter;
         _titleLabel.textColor = [UIColor drn_darkGrayColor];
+        _titleLabel.font = [UIFont fontWithName:@"AppleSDGothicNeo-SemiBold" size:17.0f];
         
         _closeButton = [[UIButton alloc] init];
         [_closeButton setImage:[UIImage imageNamed:@"CloseButton"] forState:UIControlStateNormal];
