@@ -40,7 +40,6 @@
 {
     self = [super init];
     if (self) {
-        self.view.backgroundColor = [UIColor colorWithWhite:0.97f alpha:1.0f];
         self.title = room.title;
         
         _room = room;
@@ -62,12 +61,6 @@
         [_scrollView addGestureRecognizer:tapRecognizer];
         
         _tooltipView = [[DRNTooltipView alloc] init];
-        
-        [self.view addSubview:_titleView];
-        [self.view addSubview:_scrollView];
-        [self.view addSubview:_tooltipView];
-        
-        [self makeAutoLayoutConstraints];
     }
     return self;
 }
@@ -93,6 +86,18 @@
 }
 
 #pragma mark - Lifecycle
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    
+    self.view.backgroundColor = [UIColor colorWithWhite:0.97f alpha:1.0f];
+    [self.view addSubview:_titleView];
+    [self.view addSubview:_scrollView];
+    [self.view addSubview:_tooltipView];
+    
+    [self makeAutoLayoutConstraints];
+}
 
 - (void)viewDidAppear:(BOOL)animated
 {
