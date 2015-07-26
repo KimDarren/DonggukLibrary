@@ -26,13 +26,17 @@
 
 + (void)getRoomListWithSuccess:(DRNNetworkSuccessArrayHandler)success failure:(DRNNetworkFailureHandler)failure
 {
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
     AFHTTPRequestOperationManager *manager = [self requestManager];
     [manager GET:URL_ROOM_LIST parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        
+        [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
         if (success) {
             NSArray *rooms = [DRNRoom roomsWithResponseObject:responseObject];
             success(rooms);
         }
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
         if (failure) {
             failure(error);
         }
@@ -43,13 +47,15 @@
                       success:(DRNNetworkSuccessDictionaryHandler)success
                       failure:(DRNNetworkFailureHandler)failure
 {
-    NSLog(@"url = %@", URL_ROOM_STATUS(room.number));
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
     AFHTTPRequestOperationManager *manager = [self requestManager];
     [manager GET:URL_ROOM_STATUS(room.number) parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
         if (success) {
             success(responseObject);
         }
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
         if (failure) {
             failure(error);
         }
