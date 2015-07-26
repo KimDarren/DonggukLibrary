@@ -9,11 +9,13 @@
 #import <UIKit/UIKit.h>
 
 @class DRNRoom;
+@class DRNTooltipView;
 
-@interface DRNRoomStatusViewController : UIViewController
+@interface DRNRoomStatusViewController : UIViewController <UIScrollViewDelegate>
 
 @property (strong, nonatomic) DRNRoom *room;
 @property (strong, nonatomic) UIScrollView *scrollView;
+@property (strong, nonatomic) DRNTooltipView *tooltipView;
 
 - (instancetype)initWithRoom:(DRNRoom *)room;
 

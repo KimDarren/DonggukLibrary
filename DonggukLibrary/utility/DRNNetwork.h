@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-#define URL     @"http://api.darrenline.tk/dongguk_library"
+#define URL     @"http://api.koreandarren.com/dongguk_library"
 #define URL_ROOM_LIST           URL "/room_list.php"
 #define URL_ROOM_STATUS(val)    [NSString stringWithFormat:@"%@%@%@", URL, @"/room_status.php?number=", val]
 

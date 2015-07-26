@@ -10,4 +10,6 @@
 
 @interface DRNRoomListNavigationController : UINavigationController
 
+- (instancetype)initWithRootViewController:(UIViewController *)rootViewController;
+
 @end

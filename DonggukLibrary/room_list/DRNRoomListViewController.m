@@ -35,12 +35,15 @@ static NSString * const DRNRoomCellIdentifier = @"DRNRoomCell";
 {
     self = [super init];
     if (self) {
-        self.view.backgroundColor = [UIColor redColor];
+        self.view.backgroundColor = [UIColor whiteColor];
+        self.title = @"열람실 목록";
+        
         _tableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStylePlain];
         _tableView.dataSource = self;
         _tableView.delegate = self;
         _tableView.estimatedRowHeight = 100.0;
-        _tableView.rowHeight = UITableViewAutomaticDimension;
+        _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+//        _tableView.rowHeight = UITableViewAutomaticDimension;
         
         [_tableView registerClass:[DRNRoomCell class] forCellReuseIdentifier:DRNRoomCellIdentifier];
         [self.view addSubview:_tableView];
@@ -75,6 +78,11 @@ static NSString * const DRNRoomCellIdentifier = @"DRNRoomCell";
     return _rooms.count;
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 100.0f;
+}
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     DRNRoomCell *cell = [tableView dequeueReusableCellWithIdentifier:DRNRoomCellIdentifier
@@ -89,7 +97,7 @@ static NSString * const DRNRoomCellIdentifier = @"DRNRoomCell";
 {
     DRNRoom *room = [_rooms objectAtIndex:indexPath.row];
     DRNRoomStatusViewController *statusView = [[DRNRoomStatusViewController alloc] initWithRoom:room];
-    [self.navigationController pushViewController:statusView animated:YES];
+    [self presentViewController:statusView animated:YES completion:nil];
 }
 
 @end

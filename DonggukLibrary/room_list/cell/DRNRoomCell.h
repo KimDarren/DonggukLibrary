@@ -13,6 +13,8 @@
 
 @property (weak, nonatomic)     DRNRoom *room;
 @property (strong, nonatomic)   UILabel *titleLabel;
+@property (strong, nonatomic)   UILabel *statusLabel;
+@property (strong, nonatomic)   UIView *separator;
 
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier;
 
