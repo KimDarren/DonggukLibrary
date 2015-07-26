@@ -15,4 +15,10 @@
     return CGRectGetHeight([UIApplication sharedApplication].statusBarFrame);
 }
 
++ (NSString *)versionString
+{
+    NSString * appVersionString = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleShortVersionString"];
+    return appVersionString;
+}
+
 @end

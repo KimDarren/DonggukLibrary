@@ -16,6 +16,7 @@
 
 // Controller
 #import "DRNRoomStatusViewController.h"
+#import "DRNAboutViewController.h"
 
 // Utility
 #import "DRNNetwork.h"
@@ -35,7 +36,6 @@ static NSString * const DRNRoomCellIdentifier = @"DRNRoomCell";
 {
     self = [super init];
     if (self) {
-        self.view.backgroundColor = [UIColor whiteColor];
         self.title = @"열람실 목록";
         
         _tableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStylePlain];
@@ -43,11 +43,8 @@ static NSString * const DRNRoomCellIdentifier = @"DRNRoomCell";
         _tableView.delegate = self;
         _tableView.estimatedRowHeight = 100.0;
         _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-//        _tableView.rowHeight = UITableViewAutomaticDimension;
         
         [_tableView registerClass:[DRNRoomCell class] forCellReuseIdentifier:DRNRoomCellIdentifier];
-        [self.view addSubview:_tableView];
-        [self makeAutoLayoutConstraints];
     }
     return self;
 }
@@ -59,9 +56,24 @@ static NSString * const DRNRoomCellIdentifier = @"DRNRoomCell";
     }];
 }
 
+#pragma mark - Lifecycle
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    self.view.backgroundColor = [UIColor whiteColor];
+    
+    UIBarButtonItem *aboutItem = [[UIBarButtonItem alloc] initWithTitle:@"?" style:UIBarButtonItemStylePlain target:self action:@selector(presentAboutViewController:)];
+    self.navigationItem.leftBarButtonItem = aboutItem;
+    
+    [self.view addSubview:_tableView];
+    [self makeAutoLayoutConstraints];
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
     
     [DRNNetwork getRoomListWithSuccess:^(NSArray *responseObject) {
         _rooms = responseObject;
@@ -69,6 +81,14 @@ static NSString * const DRNRoomCellIdentifier = @"DRNRoomCell";
     } failure:^(NSError *error) {
         NSLog(@"%@", error);
     }];
+}
+
+#pragma mark - Actions
+
+- (void)presentAboutViewController:(id)sender
+{
+    DRNAboutViewController *aboutViewController = [[DRNAboutViewController alloc] init];
+    [self presentViewController:aboutViewController animated:YES completion:nil];
 }
 
 #pragma mark - Table view delegate and data source

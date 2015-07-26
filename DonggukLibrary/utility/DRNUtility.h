@@ -11,5 +11,6 @@
 @interface DRNUtility : NSObject
 
 + (CGFloat)statusBarHeight;
++ (NSString *)versionString;
 
 @end
