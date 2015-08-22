@@ -31,5 +31,9 @@ pod install
 
 * *DonggukLibrary.xcworkspace)* 파일을 열어 Simulator 혹은 iOS Device에 실행합니다.
 
+## 함께보기
+* 잘~ 작성된 [API 문서](https://github.com/USAIU/DonggukLibrary/blob/develop/API.md)
+
 ## 저작권
 ### [MIT](https://github.com/USAIU/DonggukLibrary/blob/develop/LICENSE)
+소스코드 참고 및 사용시 저에게 [알려주는건 어떠신가요?](mailto:koreandarren@gmail.com)
