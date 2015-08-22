@@ -5,7 +5,7 @@ _There is no English version. If you cannot read Korean, you should go back :) s
 
 ## 소개
 * iPhone용 **[동국대학교 중앙도서관 열람실](https://itunes.apple.com/de/app/dong-gugdaehaggyo-jung-angdoseogwan/id1023218522?mt=8)** 어플리케이션입니다.
-* 현재, 전세계 앱스토어에 1.0.0 버전이 release 되어있습니다.
+* 현재, 전세계 앱스토어에 1.0.0 버전이 release 되어있습니다. 새벽에 *할 일이 없어서* 오픈소스로 공개하게 됐습니다.
 * [동국대학교 중앙도서관](http://map.naver.com/local/siteview.nhn?code=11592555) 내의 열람실 좌석 정보를 실시간으로 제공합니다.
 
 ## 실행하기
