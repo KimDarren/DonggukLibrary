@@ -10,7 +10,7 @@ _There is no English version. If you cannot read Korean, you should go back :) s
 
 ## 실행하기
 
-**동국대학교 중앙소거관 열람실** 어플리케이션은 [Cocoapods](http://cocoapods.org)를 사용하고 있습니다. 
+**동국대학교 중앙도서관 열람실** 어플리케이션은 [Cocoapods](http://cocoapods.org)를 사용하고 있습니다. 
 
 * Cocoapods를 설치합니다. *이미 설치되어있다면 다음 단계로 넘어가도 좋습니다.*
 
