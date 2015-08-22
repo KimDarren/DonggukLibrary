@@ -121,6 +121,8 @@
     } failure:^(NSError *error) {
         NSLog(@"%@", error);
     }];
+    
+    [DRNNetwork sendGA:_room.title];
 }
 
 #pragma mark - Data

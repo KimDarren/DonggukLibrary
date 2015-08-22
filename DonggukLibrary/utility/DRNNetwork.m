@@ -13,6 +13,9 @@
 
 // Library
 #import <AFNetworking/AFNetworking.h>
+#import "GAI.h"
+#import "GAIDictionaryBuilder.h"
+#import "GAIFields.h"
 
 @implementation DRNNetwork
 
@@ -60,6 +63,13 @@
             failure(error);
         }
     }];
+}
+
++ (void)sendGA:(NSString *)screenName
+{
+    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+    [tracker set:kGAIScreenName value:screenName];
+    [tracker send:[[GAIDictionaryBuilder createScreenView] build]];
 }
 
 @end

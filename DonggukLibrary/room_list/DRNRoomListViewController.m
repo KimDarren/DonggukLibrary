@@ -81,6 +81,8 @@ static NSString * const DRNRoomCellIdentifier = @"DRNRoomCell";
     } failure:^(NSError *error) {
         NSLog(@"%@", error);
     }];
+    
+    [DRNNetwork sendGA:@"ROOM LIST"];
 }
 
 #pragma mark - Actions

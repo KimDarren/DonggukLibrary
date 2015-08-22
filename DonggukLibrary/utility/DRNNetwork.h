@@ -28,5 +28,6 @@ typedef void (^DRNNetworkFailureHandler) (NSError *error);
 + (void)getRoomStatusWithRoom:(DRNRoom *)room
                       success:(DRNNetworkSuccessDictionaryHandler)success
                       failure:(DRNNetworkFailureHandler)failure;
++ (void)sendGA:(NSString *)screenName;
 
 @end

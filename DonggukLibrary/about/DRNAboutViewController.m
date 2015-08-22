@@ -13,6 +13,7 @@
 
 // Utility
 #import "DRNUtility.h"
+#import "DRNNetwork.h"
 #import "UIColor+DRNExtension.h"
 
 // Library
@@ -254,6 +255,8 @@
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
+    
+    [DRNNetwork sendGA:@"ABOUT"];
 }
 
 #pragma mark - Action

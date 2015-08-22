@@ -8,9 +8,12 @@
 
 #import "AppDelegate.h"
 
-// Library
+// View controller
 #import "DRNRoomListNavigationController.h"
 #import "DRNRoomListViewController.h"
+
+// Library
+#import "GAI.h"
 
 @interface AppDelegate ()
 
@@ -25,7 +28,23 @@
     _window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     _window.rootViewController = root;
     [_window makeKeyAndVisible];
+    [self initializeGA];
     return YES;
+}
+
+- (void)initializeGA
+{
+    // Optional: automatically send uncaught exceptions to Google Analytics.
+    [GAI sharedInstance].trackUncaughtExceptions = YES;
+    
+    // Optional: set Google Analytics dispatch interval to e.g. 20 seconds.
+    [GAI sharedInstance].dispatchInterval = 20;
+    
+    // Optional: set Logger to VERBOSE for debug information.
+    [[[GAI sharedInstance] logger] setLogLevel:kGAILogLevelVerbose];
+    
+    // Initialize tracker. Replace with your tracking ID.
+    [[GAI sharedInstance] trackerWithTrackingId:@"UA-xxxxxxxx-x"];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {
