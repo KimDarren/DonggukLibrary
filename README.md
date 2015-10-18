@@ -29,7 +29,7 @@ pod setup
 pod install
 ```
 
-* *DonggukLibrary.xcworkspace)* 파일을 열어 Simulator 혹은 iOS Device에 실행합니다.
+* *DonggukLibrary.xcworkspace* 파일을 열어 Simulator 혹은 iOS Device에 실행합니다.
 
 ## 함께보기
 * 잘~ 작성된 [API 문서](https://github.com/DarrenLine/DonggukLibrary/blob/develop/API.md)
