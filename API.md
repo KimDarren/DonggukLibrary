@@ -21,7 +21,7 @@ _There is no English version. If you cannot read Korean, you should go back :) s
 *여러분!! [HURL.IT](https://www.hurl.it) 사용해서 천국 갑시다!!!*
 
 ### API 주소
-* http://api.koreandarren.com/**dongguk_library**
+* http://api.koreandarren.com/dongguk_library
 
 ### 열람실 목록 및 요약 정보 가져오기
 * `/room_list.php`
